@@ -5,7 +5,7 @@
 <template>
  
  <header>
-    <h1 class="text-gradient">Descriptive Title</h1>
+    <h1 class="text-gradient">Gym App</h1>
  </header>
 
  <main>
