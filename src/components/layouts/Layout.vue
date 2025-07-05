@@ -1,18 +1,14 @@
 <script setup>
-
 </script>
 
 <template>
- 
  <header>
     <h1 class="text-gradient">Gym App</h1>
  </header>
-
  <main>
     <slot/>
  </main>
- 
- <footer>
+  <footer>
     <small>Created by</small>
     <a href="https://www.github.com/Ananiyqq1" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/150599646?v=4" alt="profile picture">
@@ -21,45 +17,49 @@
     </a>
 
  </footer>
-
 </template>
 
 <style scoped>
-header,footer, main{
-    padding: 1rem;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-}
-main{
-  flex: 1;  
-}
-footer{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    padding: 3rem 0;
-    padding-bottom: 4rem;
-}
-footer a{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.3rem;
-    padding-right: 0.5rem;
-    background: var(--background-muted);
-    border-radius: 4rem;
-    border: 1px solid transparent;
-    transition-duration: 200ms;
-    text-decoration: none;
-}
-footer a:hover{
-    border-color: var(--color-link);
-}
-footer a img{
-    max-width: 30px;
-    aspect-ratio: 1 / 1;
-    border-radius: 100%;
-}
+    header, footer, main {
+        padding: 1rem;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    main {
+        flex: 1;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 2rem 0;
+        padding-bottom: 3rem;
+    }
+
+    footer a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.3rem;
+        padding-right: 0.5rem;
+        background: var(--background-muted);
+        border-radius: 4rem;
+        border: 1px solid transparent;
+        transition-duration: 200ms;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        border-color: var(--color-link);
+    }
+
+    footer a img {
+        max-width: 30px;
+        aspect-ratio: 1 / 1;
+        border-radius: 100%;
+    }
 </style>

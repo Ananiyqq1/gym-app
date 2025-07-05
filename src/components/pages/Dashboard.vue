@@ -1,49 +1,55 @@
 <script setup>
-    import { gymHealthFacts } from '../../utils';
-    import Grid from '../Grid.vue';
+    import Grid from '../Grid.vue'
 
+    import { gymHealthFacts } from '../../utils'
+
+    const props = defineProps({
+        handleSelectWorkout: Function,
+        firstIncompleteWorkoutIndex: Number
+    })
+    
+    // generate a random whole integer number between 0 and array length - 1
     const randomNumber = Math.floor(Math.random() * gymHealthFacts.length)
-    const todayFact = gymHealthFacts[randomNumber]
+    const todaysFact = gymHealthFacts[randomNumber]
+
 </script>
 
 <template>
-<sction class="dashboard">
-    <div class="card">
-        <h2>Welcome Dear User</h2>
-        <div class="tip-container">
-            <p class="tip">
-                <strong>Daily Tip</strong><br> {{ todayFact }} </p>
+    <section id="dashboard">
+        <div class="card tip-container">
+            <h2>Welcome Trainee</h2>
+            <div>
+                <p class="tip"><strong>Daily Tip</strong><br/>{{ todaysFact }}</p>
+            </div>
+            <button @click="() => handleSelectWorkout(firstIncompleteWorkoutIndex < 0 ? 0 : firstIncompleteWorkoutIndex)">Start workout &rarr;</button>
         </div>
-        <button>Start Workout &rarr;</button>
-    </div>
-    <Grid />
-</sction>
+        <Grid v-bind="props"  />
+    </section>
 </template>
 
 <style scoped>
-.tip-container,
-.tip-container div,
-#dashboard{
- display: flex;   
-}
-.tip-container,
-#dashboard{
-    flex-direction: column;
-}
-
-#dashboard{
-    gap: 0.5rem;
-}
-
-.tip-container{
-    gap: 0.5rem;
-}
-
-@media (min-width: 640px){
-    .tip-container{
-        gap: 1rem;
+    .tip-container,
+    .tip-container div,
+    #dashboard {
+        display: flex;
     }
-}
 
+    .tip-container,
+    #dashboard {
+        flex-direction: column;
+    }
 
+    #dashboard {
+        gap: 2rem;
+    }
+
+    .tip-container {
+        gap: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+        .tip-container {
+            gap: 1rem;
+        }
+    }
 </style>
